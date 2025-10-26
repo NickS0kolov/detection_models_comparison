@@ -19,7 +19,8 @@ class RTDETRProcessor:
             imgsz = 640,
             vid_stride = 2,
             half = True,
-            device = self.device
+            device = self.device,
+            tracker='processors/botsort.yaml',
         )
         detections = []
         
