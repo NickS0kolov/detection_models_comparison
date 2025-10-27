@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+import torch
 
 class YOLO11Processor:
     def __init__(self, device, model_size = 'm'):
@@ -19,7 +20,7 @@ class YOLO11Processor:
             tracker='processors/botsort.yaml',
             imgsz = 640,
             vid_stride = 2,
-            half = True,
+            half = torch.cuda.is_available(),
             device = self.device
         )
         detections = []
