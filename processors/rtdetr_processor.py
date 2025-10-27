@@ -1,4 +1,5 @@
 from ultralytics import RTDETR
+import torch
 
 class RTDETRProcessor:
     def __init__(self, device):
@@ -18,7 +19,7 @@ class RTDETRProcessor:
             persist=True, 
             imgsz = 640,
             vid_stride = 2,
-            half = True,
+            half = torch.cuda.is_available(),
             device = self.device,
             tracker='processors/botsort.yaml',
         )
