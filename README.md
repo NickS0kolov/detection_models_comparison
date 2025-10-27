@@ -27,6 +27,7 @@ pip install -r requirements.txt
 
 3. **Запустить скрипт для одной модели:**
 
+Выбор модели: ["yolo", "frcnn", "rtdetr"]
 ```bash
 python main.py --model rtdetr --video_path path/to/video.mp4 --save_path path/to/output.mp4
 ```
